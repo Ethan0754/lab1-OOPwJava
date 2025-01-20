@@ -1,6 +1,6 @@
 package Lab1;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 
@@ -9,7 +9,7 @@ public class Purse {
     private Map<Denomination, Integer> cash;
 
     public Purse() {
-        cash = new HashMap<>();
+        cash = new LinkedHashMap<>();
     }
 
     public void add(Denomination d, int numBills) {

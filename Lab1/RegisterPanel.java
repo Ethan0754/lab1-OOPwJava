@@ -16,15 +16,27 @@ public class RegisterPanel extends JPanel {
 
     RegisterPanel() {
 
-        this.setBackground(Color.BLUE);
-        inputPanel.setBackground(Color.RED);
-        inputPanel.setForeground(Color.WHITE);
+        inputPanel = new JPanel();
+
+        input = new JTextField();
+
+        changePanel = new PursePanel();
+
+        this.setBackground(Color.WHITE);
+        inputPanel.setBackground(Color.BLACK);
+        input.setBackground(Color.WHITE);
+        inputPanel.setPreferredSize(new Dimension(100, 50));
+        input.setPreferredSize(new Dimension(80, 40));
+
+        changePanel.setPreferredSize(new Dimension(300, 1000));
+
         input.addActionListener(new InputListener());
 
         this.setPreferredSize(
                 new Dimension(500, 500));
 
         this.add(inputPanel);
+        inputPanel.add(input);
         this.add(changePanel);
     }
 
@@ -33,9 +45,11 @@ public class RegisterPanel extends JPanel {
 
     private class InputListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            register.makeChange(e)
-
-
+            double num = Double.parseDouble(input.getText());
+            String text = register.makeChange(num).toString();
+            System.out.println(text);
+            changePanel.purse = register.makeChange(num);
+            changePanel.repaint();
         }
     }
 }

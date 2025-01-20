@@ -11,7 +11,8 @@ public class Register {
                 "Twenty-Dollar Note", "Ten-Dollar Note", "Five-Dollar Note",
                 "One-Dollar Note", "Quarter", "Dime", "Nickel", "Penny"};
         String[] billType = {"bill", "bill", "bill", "bill", "bill", "bill", "coin", "coin", "coin", "coin"};
-        String[] billImg = {"", "", "", "", "", "", "", "", "", ""};
+        String[] billImg = {"images/100dollar.png", "images/50dollar.png", "images/20dollar.png", "images/10dollar.png", "images/5dollar.png",
+                "images/1dollar.png", "images/quarter.png", "images/dime.png", "images/nickel.png", "images/penny.png"};
         int billCount;
         for (int i = 0; i < 10; i++) {
             if (amt >=.005 && amt < .01){
@@ -34,7 +35,7 @@ public class Register {
         Register r = new Register();
 
         Purse purse;
-        double[] checkValues = {0, 1.25, .00001, .005, -5.45, 69.89};
+        double[] checkValues = {111.1, 1.25, .00001, .005, -5.45, 69.89};
         for (double checkValue : checkValues) {
             purse = r.makeChange(checkValue);
             String purseTotal = purse.toString();

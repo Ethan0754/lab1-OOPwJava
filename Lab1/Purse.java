@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Purse {
 
-    private Map<Denomination, Integer> cash;
+    public Map<Denomination, Integer> cash;
 
     public Purse() {
         cash = new LinkedHashMap<>();

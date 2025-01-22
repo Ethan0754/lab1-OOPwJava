@@ -10,7 +10,7 @@ public class Purse {
 
     public Purse() {
         cash = new LinkedHashMap<>();
-    }
+    } //linked hash map keeps the order of the objects that they were added in
 
     public void add(Denomination d, int numBills) {
         cash.put(d, numBills);
@@ -25,7 +25,9 @@ public class Purse {
 
     public double getValue(){
         double total = 0;
+        //for each map in the cash var - find the total of the bills in that mapping
         for (Map.Entry<Denomination, Integer> bills : cash.entrySet()) {
+            //    amount attached to the bill   count of that bill
             total += bills.getKey().amt() * bills.getValue();
         }
         return total;
@@ -33,7 +35,9 @@ public class Purse {
 
     public String toString(){
         String rep = "";
+        //for each map in the cash var - create a string representation of bills in each map
         for (Map.Entry<Denomination, Integer> bills : cash.entrySet()) {
+            //   human-readable name of bill      count of that bill
             rep += bills.getKey().name() + ": " + bills.getValue() + "\n";
         }
         return rep;

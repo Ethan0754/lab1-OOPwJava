@@ -28,12 +28,13 @@ public class RegisterPanel extends JPanel {
         inputPanel.setPreferredSize(new Dimension(100, 50));
         input.setPreferredSize(new Dimension(80, 40));
 
-        changePanel.setPreferredSize(new Dimension(300, 1000));
+        changePanel.setPreferredSize(new Dimension(1000, 1000));
 
+        //handles the input to the gui
         input.addActionListener(new InputListener());
 
-        this.setPreferredSize(
-                new Dimension(500, 500));
+        this.setBackground(Color.WHITE);
+
 
         this.add(inputPanel);
         inputPanel.add(input);
